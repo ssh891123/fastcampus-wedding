@@ -1,0 +1,17 @@
+.container{
+    .wrap-persons {
+        font-size: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 1.4px;
+        font-weight: bold;
+        
+        .ico-heart {
+            fill: var(--red);
+            width: 16px;
+            height: 16px;
+            margin: 0 6px;
+        }
+    }
+}
