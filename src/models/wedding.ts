@@ -12,6 +12,8 @@ export interface Wedding {
 
   groom: Person & { parent: Person[] }
   bride: Person & { parent: Person[] }
+
+  location: Location
 }
 
 export interface Location {

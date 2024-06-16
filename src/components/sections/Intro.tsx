@@ -1,15 +1,27 @@
 import classNames from 'classnames/bind'
 import styles from './Intro.module.scss'
 import Section from '@shared/Section'
+import Text from '@shared/Text'
+import { format, parseISO } from 'date-fns'
+import { ko } from 'date-fns/locale'
 
 const cx = classNames.bind(styles)
 
 interface IntroProp {
   groomName: string
   brideName: string
+  date: string
+  location: string
+  message: string
 }
 
-export default function Intro({ groomName, brideName }: IntroProp) {
+export default function Intro({
+  groomName,
+  brideName,
+  date,
+  location,
+  message,
+}: IntroProp) {
   return (
     <Section className={cx('container')}>
       <div className={cx('wrap-persons')}>
@@ -17,6 +29,13 @@ export default function Intro({ groomName, brideName }: IntroProp) {
         <IconHeart className={cx('ico-heart')} />
         <span>{brideName}</span>
       </div>
+      <div className={cx('wrap-location')}>
+        <span>
+          {format(parseISO(date), 'yyyy년 M월 d일 eeee', { locale: ko })}
+        </span>
+        <span>{location}</span>
+      </div>
+      <Text>{message}</Text>
     </Section>
   )
 }
