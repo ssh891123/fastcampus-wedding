@@ -9,6 +9,6 @@ export default function Text({ children }: { children: string }) {
       </React.Fragment>
     )
   })
-  console.log(message)
+
   return <div>{message}</div>
 }
