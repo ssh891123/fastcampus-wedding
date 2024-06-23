@@ -45,10 +45,50 @@ export default function Map({ location }: { location: Location }) {
   }, [location])
 
   return (
-    <Section>
+    <Section
+      title={
+        <div className={cx('wrap-header')}>
+          <span className={cx('txt-title')}>오시는 길</span>
+          <span className={cx('txt-subtitle')}>{location.name}</span>
+          <span className={cx('txt-subtitle')}>{location.address}</span>
+        </div>
+      }
+    >
       <div className={cx('wrap-map')}>
         <div className={cx('map')} ref={mapContainer}></div>
+        <a
+          className={cx('btn-find-way')}
+          href={location.link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          길찾기
+        </a>
+      </div>
+
+      <div>
+        <WayToCome label={'버스'} list={location.waytocome.bus} />
+        <WayToCome label={'지하철'} list={location.waytocome.metro} />
       </div>
     </Section>
+  )
+}
+
+function WayToCome({
+  label,
+  list,
+}: {
+  label: React.ReactNode
+  list: string[]
+}) {
+  return (
+    <div className={cx('wrap-waytocome')}>
+      <div className={cx('txt-label')}>{label}</div>
+      <ul>
+        {list.map((WayToCome) => (
+          <li>{WayToCome}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
