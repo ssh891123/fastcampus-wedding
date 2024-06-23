@@ -10,8 +10,8 @@ export interface Wedding {
   galleryImages: string[]
   attendCount: number
 
-  groom: Person & { parent: Person[] }
-  bride: Person & { parent: Person[] }
+  groom: Person & { parents: Person[] }
+  bride: Person & { parents: Person[] }
 
   location: Location
 }
@@ -31,6 +31,7 @@ export interface Location {
 export interface Account {
   bankName: string
   accountNumber: string
+  kakaopayLink?: string
 }
 
 export interface Person {
