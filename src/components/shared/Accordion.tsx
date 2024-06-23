@@ -14,9 +14,13 @@ export default function Accordion({
 }: PropsWithChildren<Accordion>) {
   const [expended, setExpended] = useState(false)
 
+  const handleToggle = () => {
+    setExpended((prev) => !prev)
+  }
+
   return (
     <div className={cx(['wrap-accordion', expended ? 'open' : ''])}>
-      <div className={cx('wrap-header')}>
+      <div className={cx('wrap-header')} onClick={handleToggle}>
         <span>{label}</span>
         <IconArrowDown className={cx('ico-arrow-down')} />
       </div>
