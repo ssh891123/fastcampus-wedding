@@ -5,6 +5,7 @@ import Section from '@shared/Section'
 import Accordion from '@shared/Accordion'
 
 import { Person, Wedding } from '@models/wedding'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const cx = classNames.bind(styles)
 
@@ -71,7 +72,14 @@ function ContactInfo({ name, phoneNumber, account }: Person) {
           </a>
         </li>
         <li>
-          <button className={cx('button')}>복사</button>
+          <CopyToClipboard
+            text={`${account.bankName} ${account.accountNumber}`}
+            onCopy={() => {
+              alert('복사가 완료되었습니다.')
+            }}
+          >
+            <button className={cx('button')}>복사</button>
+          </CopyToClipboard>
         </li>
         {account.kakaopayLink ? (
           <li>
