@@ -85,7 +85,7 @@ function App() {
       <Calendar date={date} />
       <Map location={location} />
       <Contact groom={groom} bride={bride} />
-      <Share />
+      <Share gromeName={groom.name} brideName={bride.name} date={date} />
     </div>
   )
 }
