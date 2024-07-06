@@ -36,7 +36,6 @@ function App() {
         return response.json()
       })
       .then((value) => {
-        console.log(value)
         setWedding(value)
         setLoading(false)
       })
