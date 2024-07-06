@@ -6,7 +6,6 @@ import styles from './Invitation.module.scss'
 const cx = classNames.bind(styles)
 
 export default function Invitation({ message }: { message: string }) {
-  console.log(message)
   return (
     <Section className={cx('container')}>
       <IConPost className={cx('ico-post')} />
