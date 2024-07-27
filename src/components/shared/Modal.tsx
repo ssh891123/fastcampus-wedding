@@ -6,7 +6,7 @@ const cx = classNames.bind(styles)
 
 interface ModalProps {
   open: boolean
-  title: string
+  title?: string
   body: React.ReactNode
   rightButtonLabel?: string
   onRightButtonClick: () => void
@@ -18,8 +18,8 @@ export default function Modal({
   open,
   title,
   body,
-  rightButtonLabel = '닫기',
-  leftButtonLabel = '확인',
+  rightButtonLabel = '확인',
+  leftButtonLabel = '닫기',
   onRightButtonClick,
   onLeftButtonClick,
 }: ModalProps) {
