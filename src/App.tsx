@@ -1,6 +1,4 @@
 import classNames from 'classnames/bind'
-import { useEffect, useState } from 'react'
-
 import styles from './App.module.scss'
 
 import Heading from '@components/sections/Heading'
@@ -8,7 +6,6 @@ import Video from '@components/sections/Video'
 import ImageGallery from '@components/sections/ImageGallery'
 import Intro from '@components/sections/Intro'
 
-import { Wedding } from '@models/wedding'
 import Invitation from '@components/sections/Invitation'
 import Calendar from '@components/sections/Calendar'
 import Map from '@components/sections/Map'
@@ -19,15 +16,7 @@ import useWedding from '@/hooks/useWedding'
 const cx = classNames.bind(styles)
 
 function App() {
-  const { wedding, isLoading, error } = useWedding()
-
-  // if (isLoading) {
-  //   return <FullScreenMessage type="loading" />
-  // }
-
-  // if (error) {
-  //   return <FullScreenMessage type="error" />
-  // }
+  const { wedding } = useWedding()
 
   if (wedding == null) {
     return null
